@@ -23,11 +23,11 @@ public class UserController {
         return "details";
     }
 
-    @GetMapping("/list-user")
+    @GetMapping("/list")
     public String list(ModelMap modelMap) {
         User user = new User("Manuel", "Jimenez");
-        User user2 = new User("Marta", "culo");
-        User user3 = new User("Maximo", "incha");
+        User user2 = new User("Marta", "culo", "marta@correo.cl");
+        User user3 = new User("Maximo", "incha","maximo@correo.cl");
 
         List<User> users = Arrays.asList(user,user2,user3);
 
@@ -35,5 +35,6 @@ public class UserController {
         modelMap.addAttribute("title","Listado de Usuarios");
         return "list";
     }
+
 
 }

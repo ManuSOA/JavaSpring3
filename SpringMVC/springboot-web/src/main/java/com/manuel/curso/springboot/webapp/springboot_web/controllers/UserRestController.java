@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,6 +30,7 @@ public class UserRestController {
 
     @GetMapping("/list-user")
     public List<User> list() {
+
         User user = new User("Manuel", "Jimenez");
         User user2 = new User("Marta", "culo");
         User user3 = new User("Maximo", "incha");
