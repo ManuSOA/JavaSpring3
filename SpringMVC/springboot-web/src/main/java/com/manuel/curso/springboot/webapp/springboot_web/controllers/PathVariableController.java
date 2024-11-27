@@ -2,7 +2,9 @@ package com.manuel.curso.springboot.webapp.springboot_web.controllers;
 
 import com.manuel.curso.springboot.webapp.springboot_web.models.User;
 import com.manuel.curso.springboot.webapp.springboot_web.models.dto.ParamDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -23,6 +25,9 @@ public class PathVariableController {
     private List<String> listOfValues;
     @Value("#{${config.valuesMap}}")
     private Map<String,Object> valuesMap;
+
+    @Autowired
+    private Environment env;
 
 
     @GetMapping("/baz/{message}")
@@ -62,6 +67,7 @@ public class PathVariableController {
         json.put("name", username);
         json.put("code",code);
         json.put("message", message);
+        json.put("message2", env.getProperty("config.message"));
         json.put("listOfValues", listOfValues);
         json.put("valueMap", valuesMap);
 
