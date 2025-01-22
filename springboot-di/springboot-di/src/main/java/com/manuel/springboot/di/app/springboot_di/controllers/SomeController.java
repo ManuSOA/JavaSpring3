@@ -1,7 +1,7 @@
 package com.manuel.springboot.di.app.springboot_di.controllers;
 
 import com.manuel.springboot.di.app.springboot_di.models.Product;
-import com.manuel.springboot.di.app.springboot_di.services.ProductService;
+import com.manuel.springboot.di.app.springboot_di.services.ProductServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +13,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class SomeController {
 
-
-    ProductService service = new ProductService();
+    ProductServiceImpl service = new ProductServiceImpl();
 
     @GetMapping
     public List<Product> listProduct(){
