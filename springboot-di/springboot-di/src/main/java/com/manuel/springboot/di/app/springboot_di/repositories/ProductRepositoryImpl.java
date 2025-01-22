@@ -17,11 +17,12 @@ public class ProductRepositoryImpl implements ProductRepository {
         );
     }
 
-
+    @Override
     public List<Product> findAll(){
         return listProduct;
     }
 
+    @Override
     public Product findById(Long id){
         return listProduct.stream().filter(p ->p.getId().equals(id))
                 .findFirst().orElseThrow();

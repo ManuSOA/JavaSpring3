@@ -11,6 +11,7 @@ public class ProductServiceImpl implements ProductService {
 
     ProductRepositoryImpl productRepository = new ProductRepositoryImpl();
 
+    @Override
     public List<Product> findAll(){
         return productRepository.findAll().stream().map(p -> {
             Double priceImp = p.getPrice() * 1.25d;
@@ -20,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
         }).collect(Collectors.toList());
     }
 
+    @Override
     public Product findById(Long id){
         return productRepository.findById(id);
     }
